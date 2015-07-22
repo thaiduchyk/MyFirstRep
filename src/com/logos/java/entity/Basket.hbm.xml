@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17.07.2015 12:31:29 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.logos.java.entity.Basket" table="BASKET">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="foreign">
+                <param name="property">user</param>
+            </generator>
+        </id>
+        <one-to-one name="user" class="com.logos.java.entity.User"  constrained="true"></one-to-one>
+        <!-- <set name="Articles" table="ARTICLEBASKET" inverse="false" lazy="true">
+            <key>
+                <column name="BASKET_ID" />
+            </key>
+            <many-to-many column="ARTICLE_ID" class="com.logos.java.entity.Article"/>
+        </set> -->
+    </class>
+</hibernate-mapping>

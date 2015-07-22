@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17.07.2015 12:13:31 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.logos.java.entity.Article" table="ARTICLE">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="code" type="java.lang.String">
+            <column name="CODE" />
+        </property>
+        <property name="model" type="java.lang.String">
+            <column name="MODEL" />
+        </property>
+        <property name="producer" type="java.lang.String">
+            <column name="PRODUCER" />
+        </property>
+        <property name="price" type="double">
+            <column name="PRICE" />
+        </property>
+        <property name="category" type="java.lang.String">
+            <column name="CATEGORY" />
+        </property>
+        <property name="fotoURL" type="java.lang.String">
+            <column name="FOTOURL" />
+        </property>
+        <set name="baskets" table="ARTICLEBASKET" inverse="false" lazy="true" cascade="save-update">
+            <key>
+                <column name="ARTICLE_ID" not-null="true"/>
+            </key>
+		<many-to-many column="BASKET_ID"  class="com.logos.java.entity.Basket"/>
+        </set>
+        <set name="orders" table="ARTICLEORDER" inverse="false" lazy="true">
+            <key>
+                <column name="ARTICLE_ID" />
+            </key>
+            <many-to-many column="ORDER_ID"  class="com.logos.java.entity.Order"/>
+        </set>
+    </class>
+</hibernate-mapping>
