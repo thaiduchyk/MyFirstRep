@@ -29,17 +29,21 @@
         <property name="fotoURL" type="java.lang.String">
             <column name="FOTOURL" />
         </property>
-        <set name="baskets" table="ARTICLEBASKET" inverse="false" lazy="true" cascade="save-update">
+        <set name="baskets" table="ARTICLE_BASKET" inverse="false" lazy="true" fetch="select" cascade="all">
             <key>
                 <column name="ARTICLE_ID" not-null="true"/>
             </key>
-		<many-to-many column="BASKET_ID"  class="com.logos.java.entity.Basket"/>
+			<many-to-many entity-name="com.logos.java.entity.Basket">
+                <column name="BASKET_ID" not-null="true" />
+        	</many-to-many>
         </set>
-        <set name="orders" table="ARTICLEORDER" inverse="false" lazy="true">
+        <set name="orders" table="ARTICLE_ORDER" inverse="false" lazy="true" fetch="select" cascade="all">
             <key>
                 <column name="ARTICLE_ID" />
             </key>
-            <many-to-many column="ORDER_ID"  class="com.logos.java.entity.Order"/>
+            <many-to-many entity-name="com.logos.java.entity.Order">
+                <column name="ORDER_ID" not-null="true" />
+        	</many-to-many>
         </set>
     </class>
 </hibernate-mapping>

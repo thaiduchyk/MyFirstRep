@@ -12,6 +12,7 @@
   <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
   <mapping class="com.logos.java.entity.User" resource="com/logos/java/entity/User.hbm.xml"/>
   <mapping class="com.logos.java.entity.Basket" resource="com/logos/java/entity/Basket.hbm.xml"/>
-  <mapping class="com.logos.java.entity.Basket" resource="com/logos/java/entity/Order.hbm.xml"/>
+  <mapping class="com.logos.java.entity.Order" resource="com/logos/java/entity/Order.hbm.xml"/>
+  <mapping class="com.logos.java.entity.Article" resource="com/logos/java/entity/Article.hbm.xml"/>
  </session-factory>
 </hibernate-configuration>

@@ -3,6 +3,7 @@ package com.logos.java.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+
 public class Article {
 	private int id;
 	private String name;
@@ -87,10 +88,10 @@ public class Article {
 		
 	}
 	
-	public Article(int id, String name, String code, String model, String producer,
+	public Article(String name, String code, String model, String producer,
 			double price, String category, String fotoURL) {
 		super();
-		this.id = id;
+		
 		this.name = name;
 		this.code = code;
 		this.model = model;
@@ -99,16 +100,6 @@ public class Article {
 		this.category = category;
 		this.fotoURL = fotoURL;
 	}
-	@Override
-	public String toString() {
-		return "Article [id=" + id + ", name=" + name + ", code=" + code
-				+ ", model=" + model + ", producer=" + producer + ", price="
-				+ price + ", category=" + category + ", fotoURL=" + fotoURL
-				+ ", baskets=" + baskets + ", orders=" + orders + "]";
-	}
-
 	
 	
-
-			
 }

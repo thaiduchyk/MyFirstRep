@@ -10,7 +10,7 @@ public class Basket {
 	
 	private int id;
 	private User user;
-//	private Set Articles = new HashSet();
+	private Set articles = new HashSet();
 	
 	public int getId() {
 		return id;
@@ -24,21 +24,15 @@ public class Basket {
 	public void setUser(User user) {
 		this.user = user;
 	}
-//	public Set getArticles() {
-//		return Articles;
-//	}
-//	public void setArticles(Set articles) {
-//		Articles = articles;
-//	}
+	public Set getArticles() {
+		return articles;
+	}
+	public void setArticles(Set articles) {
+		articles = articles;
+	}
 	public Basket() {
 		
 	}
 	
-//	public String toString() {
-//		return "Basket [id=" + id + ", user=" + user + ", Articles=" + Articles
-//				+ "]";
-//	}
-	
-		
 	
 }

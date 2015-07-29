@@ -11,11 +11,13 @@
             </generator>
         </id>
         <one-to-one name="user" class="com.logos.java.entity.User"  constrained="true"></one-to-one>
-        <!-- <set name="Articles" table="ARTICLEBASKET" inverse="false" lazy="true">
+        <set name="articles" table="ARTICLE_BASKET" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="BASKET_ID" />
             </key>
-            <many-to-many column="ARTICLE_ID" class="com.logos.java.entity.Article"/>
-        </set> -->
+             <many-to-many entity-name="com.logos.java.entity.Order">
+                <column name="ORDER_ID" not-null="true" />
+        	</many-to-many>
+        </set>
     </class>
 </hibernate-mapping>
