@@ -13,5 +13,12 @@
 	<bean id="Article" class="com.logos.java.entity.Article" scope="prototype"/>
 	<bean id="Basket" class="com.logos.java.entity.Basket" scope="prototype"/>
 	<bean id="Order" class="com.logos.java.entity.Order" scope="prototype"/>
+	<bean id="UserDAOImpl" class="com.logos.java.DAO.impl.UserDAOImpl"></bean>
+	<bean id="UserServiceImpl" class="com.logos.java.service.impl.UserServiceImpl">
+		<property name="ud" ref="UserDAOImpl">
+			
+		</property>
+	</bean>
+	
 	 
 </beans>

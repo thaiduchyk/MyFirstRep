@@ -21,13 +21,6 @@ import com.logos.java.entity.User;
 @Component
 public class Test {
 
-//	@Autowired
-//	static UserDAOImpl ud;
-//	@Autowired
-//	static OrderDAOImpl od;
-//	@Autowired
-//	static ArticleDAOImpl ad;
-	
 	static ApplicationContext context = new ClassPathXmlApplicationContext("applicationcontex.xml");
 	
 	
@@ -39,16 +32,16 @@ public class Test {
 		ArticleDAOImpl ad = (ArticleDAOImpl) context.getBean("articleDAOImpl");
 		UserServiceImpl usi = new UserServiceImpl();
 		
-		User u4 = (User) context.getBean("User");
-		u4.setName("fedja");
-		u4.setSurname("pov");
-		u4.setLogin("iv");
-		u4.setPassword("tttxxx");
-		u4.setEmail("it@hh.com");
-		u4.setAge(29);
+		User u6 = (User) context.getBean("User");
+		u6.setId(1);
+		u6.setName("ivrran");
+		u6.setSurname("perrrtrov");
+		u6.setLogin("iv");
+		u6.setPassword("xrrxx");
+		u6.setEmail("i@h.crrom");
+		u6.setAge(23);
 				
-		usi.deleteUser(u4);
-		
+		usi.modifyUser(u6);	
 		
 		
 		
